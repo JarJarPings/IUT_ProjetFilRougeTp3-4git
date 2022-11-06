@@ -1,0 +1,209 @@
+/*Select by Element*/
+
+/*Pointer-event doc sur le web*/
+
+/* Gestion body */
+body{
+    color: yellow;
+    background-color: limegreen;
+    background-image: url("/enseigneZoo.jpg");
+    font-family: "MV Boli";
+}
+
+header{
+    background-color: limegreen;
+    background-image: url("https://media.tenor.com/fGE8DZgU5D8AAAAd/jungle-leaves.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    border: yellow groove 15px;
+}
+
+/*Select by ID*/
+
+/* Gestion des Titre H1 et H2 en haut de chaques pages */
+#MainTitle{
+    color: yellow;
+    text-decoration: underline dotted;
+    margin: auto 88px;
+    text-align: center;
+}
+
+#MenuTitle{
+    color: yellow;
+    text-decoration: underline dashed;
+    margin: auto 88px;
+    text-align: center;
+}
+
+/* Gestion liste Menu principale*/
+
+#MainNav{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto 88px;
+    text-align: center;
+
+}
+
+#MainMenu {
+
+    border-width: 50px;
+}
+
+#MainMenu li {
+    background-color: yellow;
+    width: 100px;
+    text-align: center;
+    border: yellow groove;
+
+}
+
+#MainMenu li a{
+    color: limegreen;
+    text-decoration: none;
+}
+
+#MainMenu > li {
+    display: inline-block;
+}
+
+/*
+#MainMenu ul,li,a {
+    display: inline-block;
+}
+*/
+
+
+
+/*Gestion tableau page Nos Animaux*/
+
+/*ID table page Animaux*/
+
+#MainTable{
+    color: limegreen;
+    border: red;
+    border: yellow groove 8px;
+    border-top: none;
+}
+
+#MainTable thead{
+    color: limegreen;
+    background-color: yellow;
+}
+
+#MainTable tr:nth-child(even){
+    background-color:yellow;
+    color: limegreen;
+}
+
+#MainTable >tbody tr {
+    color: yellow;
+    font-weight: bolder;
+
+}
+
+
+#MainTable >tbody>tr:hover{
+
+    color: orange;
+
+}
+
+
+/*Gestion section page acceuil*/
+
+#MainSection{
+    border: yellow;
+}
+
+
+#MainSection button{
+    background-color: yellow;
+    color: limegreen;
+    font-family: "MV Boli";
+    border: yellow;
+}
+
+
+/*Select by Class*/
+
+/*Class pour style rubrique standards pages*/
+.RubriqueStandard {
+    background-color: yellow;
+    color: limegreen;
+}
+
+.RubriqueStandard h3,h4{
+    background-color: limegreen;
+    color: yellow;
+}
+
+
+
+
+/*Images du tabeau Animaux du zoo*/
+.ImgZoo {
+    height: 200px;
+    width: 200px;
+    pointer-events: auto;
+    mouse-event: pointermove;
+}
+
+/*span Tableau animaux Zoo*/
+
+span.SpanDescAnimal{
+    pointer-events: auto;
+    mouse-event: pointermove;
+
+}
+
+/*Class Menu déroulant page perso*/
+
+.sous{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+/*
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+*/
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+
+}
+
+.sous a:hover{
+    border-bottom: none;
+    text-decoration: underline red 3px;
+    background: orange;
+    background-size: 50px;
+
+}
+
+.deroulant > a:after{
+    content:"▼";
+    font-size: 12px;
+    display: inline-block;
+
+}
+.deroulant > li {
+    display: inline-block;
+}
