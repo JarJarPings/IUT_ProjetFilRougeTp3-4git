@@ -1,0 +1,35 @@
+{
+  "name": "IUT_FrontEndJS_TP3part2git",
+  "version": "1.0.0",
+  "espece":[
+    {
+
+
+      "primates": [
+        {
+
+        }
+      ],
+
+      "felins": [
+        {
+
+        }
+      ],
+
+      "oiseaux": [
+        {
+
+        }
+      ],
+
+      "mammiferes": [
+        {
+
+        }
+      ]
+
+
+    }
+  ]
+}
