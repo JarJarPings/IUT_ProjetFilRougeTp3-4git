@@ -39,7 +39,7 @@
 
 <body>
 
-<p>
+<p id="paraNav">
   Pour naviguer, cliquer sur l'onglet de votre choix.
 </p>
 
@@ -195,11 +195,11 @@
     </tr>
     </thead>
 
-    <tbody>
+    <tbody id="animauxTbody">
 
     <tr>
       <td>
-        <h3> Singe </h3>
+        <h3> Macaque </h3>
         <img class="ImgZoo" src="images/singe.jpg">
       </td>
 
@@ -300,10 +300,39 @@
     <a href="#top">Retour haut de page</a>
   </button>
 
+  <form method="" id="formAddAnimal">
+
+    <fieldset>
+
+      <label for="inputNomFormAddAnimal">Nom espéce animal :</label>
+      <input id="inputNomFormAddAnimal" type="text" placeholder="nom espéce">
+
+      <label for="inputDescripFormAddAnimal">Description animal :</label>
+      <input id="inputDescripFormAddAnimal" type="text" placeholder="Description">
+
+      <label for="inputOriginFormAddAnimal">Pays origine animal :</label>
+      <input id="inputOriginFormAddAnimal" type="text" placeholder="pays origine">
+
+      <label for="inputImageFormAddAnimal">URL image animal :</label>
+      <input id="inputImageFormAddAnimal" type="url" placeholder="https://www.sciencesetavenir.fr/assets/img/2017/09/14/cover-r4x3w1000-59ba79b28b44f-naruto.jpg">
+
+    </fieldset>
+
+
+    <button type="button" id="btnAddNewAnimal">
+      Add
+    </button>
+
+  </form>
+
 </div>
 
 
 
+<script src="json/animaux.json"></script>
+
 <script src="js/indexDynamique.js"></script>
+
+
 </body>
 </html>
