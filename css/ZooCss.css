@@ -25,23 +25,23 @@ header{
 #MainTitle{
     color: yellow;
     text-decoration: underline dotted;
-    margin: auto 88px;
+    /*margin: auto 88px;*/
     text-align: center;
 }
 
 #MenuTitle{
     color: yellow;
     text-decoration: underline dashed;
-    margin: auto 88px;
+    /*margin: auto 88px;*/
     text-align: center;
 }
 
 /* Gestion liste Menu principale*/
 
 #MainNav{
-    padding-left: 50px;
+    /*padding-left: 50px;
     padding-right: 50px;
-    margin: auto 88px;
+    margin: auto 88px;*/
     text-align: center;
 
 }
@@ -206,4 +206,17 @@ nav > ul li:hover .sous{
 }
 .deroulant > li {
     display: inline-block;
+}
+
+
+/*
+Gestion style formulaire ajout animaux dans tableaux
+ */
+
+#formAddAnimal{
+
+}
+
+#fieldAdd{
+
 }

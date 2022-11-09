@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Index Zootopia</title>
+
   <link rel="stylesheet" href="css/ZooCss.css">
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css">
+
 </head>
 
-<header>
+<header class="container">
 
-  <h1 id="MainTitle"> Index ! </h1>
+  <h1 id="MainTitle" class=""> Index ! </h1>
 
   <h2 id="MenuTitle"> Menu </h2>
 
-  <nav id="MainNav">
+  <nav id="MainNav" class="container">
 
-    <ul id="MainMenu">
-      <li> <a id="ancreAcceuill" href="#"> Acceuil </a></li>
+    <ul id="MainMenu" class="row">
+      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreAcceuill" href="#"> Acceuil </a></li>
 
-      <li class="deroulant"><a href="#"> Menu perso </a>
+      <li class="deroulant col-sm-2 col-md-2 col-lg-2"><a href="#"> Menu perso </a>
         <ul class="sous">
           <li> <a href="#"> Connexion </a> </li>
           <li> <a id="ancrePerso"> Mes infos </a>  </li>
@@ -26,10 +29,10 @@
         </ul>
       </li>
 
-      <li>  <a id="ancreAnimaux" href="#">Animaux</a> </li>
-      <li> <a id="ancreAudio" href="#"> Visite Audio</a> </li>
-      <li> <a id="ancreVideo" href="#"> Visite Vidéo </a> </li>
-      <li> <a id="ancreContact" href="#"> Contact </a> </li>
+      <li class="col-sm-2 col-md-2 col-lg-2">  <a id="ancreAnimaux" href="#">Animaux</a> </li>
+      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreAudio" href="#"> Visite Audio</a> </li>
+      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreVideo" href="#"> Visite Vidéo </a> </li>
+      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreContact" href="#"> Contact </a> </li>
     </ul>
 
   </nav>
@@ -37,7 +40,7 @@
 </header>
 
 
-<body>
+<body class="container">
 
 <p id="paraNav">
   Pour naviguer, cliquer sur l'onglet de votre choix.
@@ -183,15 +186,17 @@
 
 
 <!-- ADD PAGE ANIMAUX -->
+
+
 <div id="divTableAnimaux">
 
-  <table id="MainTable">
-    <thead>
+  <table id="MainTable" class="container">
+    <thead class="row">
     <tr>
-      <th> NOM </th>
-      <th> Description </th>
-      <th> Pays Natal</th>
-      <th> </th>
+      <th class="col-sm-3 col-md-3 col-lg-3"> NOM </th>
+      <th class="col-sm-3 col-md-3 col-lg-3"> Description </th>
+      <th class="col-sm-3 col-md-3 col-lg-3"> Pays Natal</th>
+      <th class="col-sm-3 col-md-3 col-lg-3"> </th>
     </tr>
     </thead>
 
@@ -300,23 +305,32 @@
     <a href="#top">Retour haut de page</a>
   </button>
 
-  <form method="" id="formAddAnimal">
+  <form method="" id="formAddAnimal" class="container">
 
-    <fieldset>
+    <fieldset id="fieldAdd" class="row">
 
-      <label for="inputNomFormAddAnimal">Nom espéce animal :</label>
-      <input id="inputNomFormAddAnimal" type="text" placeholder="nom espéce">
-
-      <label for="inputDescripFormAddAnimal">Description animal :</label>
-      <input id="inputDescripFormAddAnimal" type="text" placeholder="Description">
-
-      <label for="inputOriginFormAddAnimal">Pays origine animal :</label>
-      <input id="inputOriginFormAddAnimal" type="text" placeholder="pays origine">
-
-      <label for="inputImageFormAddAnimal">URL image animal :</label>
-      <input id="inputImageFormAddAnimal" type="url" placeholder="https://www.sciencesetavenir.fr/assets/img/2017/09/14/cover-r4x3w1000-59ba79b28b44f-naruto.jpg">
+      <label class="col-sm-1 col-md-1 col-lg-1" for="inputNomFormAddAnimal">Nom espéce animal :</label>
+      <input class="col-sm-11 col-md-11 col-lg-11" id="inputNomFormAddAnimal" type="text" placeholder="nom espéce">
 
     </fieldset>
+
+    <fieldset class="row">
+      <label class="col-sm-1 col-md-1 col-lg-1" for="inputDescripFormAddAnimal">Description animal :</label>
+      <input class="col-sm-11 col-md-11 col-lg-11" id="inputDescripFormAddAnimal" type="text" placeholder="Description">
+    </fieldset>
+
+    <fieldset class="row">
+      <label class="col-sm-1 col-md-1 col-lg-1" for="inputOriginFormAddAnimal">Pays origine animal :</label>
+      <input class="col-sm-11 col-md-11 col-lg-11" id="inputOriginFormAddAnimal" type="text" placeholder="pays origine">
+    </fieldset>
+
+    <fieldset class="row">
+      <label class="col-sm-1 col-md-1 col-lg-1" for="inputImageFormAddAnimal">URL image animal :</label>
+      <input class="col-sm-11 col-md-11 col-lg-11" id="inputImageFormAddAnimal" type="url" placeholder="https://www.sciencesetavenir.fr/assets/img/2017/09/14/cover-r4x3w1000-59ba79b28b44f-naruto.jpg">
+    </fieldset>
+
+
+
 
 
     <button type="button" id="btnAddNewAnimal">
