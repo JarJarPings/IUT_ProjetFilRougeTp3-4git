@@ -224,13 +224,33 @@ btnAddNewAnimal.onclick = function (){
     console.log("pays origine : "+valueAddAnimalOrigin);
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
+
+
+    /*
+    let myJSON = {"name":valueAddAnimalNom, "imgsource":valueAddAnimalImg,"description":valueAddAnimalDescri,"origine":valueAddAnimalOrigin};
+    myJSON;
+    console.log(myJSON);
+    let myString = JSON.stringify(myJSON);
+    myString;
+    console.log(myString);
+    console.log(jsonAnimaux);
+
+
+    console.log(JSON.stringify({ x: 5, y: 6 }));
+// expected output: "{"x":5,"y":6}"
+
+    console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
+// expected output: "[3,"false",false]"
+
+    console.log(JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] }));
+// expected output: "{"x":[10,null,null,null]}"
+
+    console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
+// expected output: ""2006-01-02T15:04:05.000Z""
+
+     */
+
 };
 
-function testJson (jsonObj){
-    let myH3 = document.createElement('h3');
-    myH3.textContent = jsonObj['espece']+jsonObj['name'];
-    animauxTbody.appendChild(myH3);
 
-};
 
-testJson(jsonAnimaux);
