@@ -110,6 +110,11 @@ header{
 
 }
 
+#MainTable >tbody>tr>td>img{
+    width: 250px;
+    height: 250px;
+}
+
 
 /*Gestion section page acceuil*/
 

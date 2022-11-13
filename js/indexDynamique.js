@@ -141,12 +141,53 @@ ancreAnimaux.onclick = function (){
 
 
 //JSON
+//récup tbody
+const animauxTbody = document.getElementById("animauxTbody");
+//const animauxJson déclarer dans fichier animaux.JSON
 console.log(animauxJson);
+//Qu'on récup dans une autre variable jsonAnimaux
 let jsonAnimaux = animauxJson;
-const jsonAnimauxLion = animauxJson['espece'][2];
-
 console.log(jsonAnimaux);
-console.log(jsonAnimauxLion);
+
+function showAnimaux(jsonObj){
+
+    let animaux = jsonObj['espece'];
+
+    for (let i = 0; i < animaux.length; i++){
+        let newTr = document.createElement('tr');
+        //newTr vas inclure les éléments suivants en enfants DOM :
+        let newTd1 = document.createElement('td');
+        let h3Td1 = document.createElement('h3');
+        let imgTd1 = document.createElement('img');
+        let  newTd2 = document.createElement('td');
+        let newTd3 = document.createElement('td');
+        let newTd4 = document.createElement('td');
+        let btnZoom = document.createElement('button');
+
+        h3Td1.textContent = animaux[i].name;
+        //imgTd1.textContent = animaux[i].imgsource;
+        imgTd1.setAttribute('src',animaux[i].imgsource);
+        newTd2.textContent = 'Descriptif : '+ animaux[i].description;
+        newTd3.textContent = "Origine : "+animaux[i].origine;
+
+        btnZoom.textContent = "Zoom";
+
+        newTr.appendChild(newTd1);
+        newTd1.appendChild(h3Td1);
+        newTd1.appendChild(imgTd1);
+        newTr.appendChild(newTd2);
+        newTr.appendChild(newTd3);
+
+        newTd4.appendChild(btnZoom);
+        newTr.appendChild(newTd4);
+
+        animauxTbody.appendChild(newTr);
+
+    }
+
+}
+showAnimaux(jsonAnimaux);
+
 
 
 
@@ -157,8 +198,7 @@ console.log(jsonAnimauxLion);
 
 //récup <table>
 const mainTable = document.getElementById("MainTable");
-//récup tbody
-const animauxTbody = document.getElementById("animauxTbody");
+
 //Récup form
 const formAddAnimal = document.getElementById("formAddAnimal");
 //Récup VALUE des input
