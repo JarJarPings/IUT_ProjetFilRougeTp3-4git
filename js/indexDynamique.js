@@ -225,22 +225,80 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
+
     let myObj = {
-        name:valueAddAnimalNom,
-        imgsource:valueAddAnimalImg,
-        description:valueAddAnimalDescri,
-        origine:valueAddAnimalOrigin
+        "name":valueAddAnimalNom,
+        "imgsource":valueAddAnimalImg,
+        "description":valueAddAnimalDescri,
+        "origine":[valueAddAnimalOrigin]
     };
-    let myJSON = JSON.stringify(myObj);
-    console.log(myJSON);
 
-    //Stock data JSON
-    localStorage.setItem("testJSON", myJSON);
-    //récup data
-    let text = localStorage.getItem("testJSON");
-    let obj = JSON.parse(text);
+    console.log(typeof ("type myObj : " + myObj))
+    console.log("myObj JS avant stringify : " + myObj);
 
-    showAnimaux(jsonAnimaux);
+   let myJSON = JSON.stringify(myObj);
+    console.log("myObj aprés stringify"+myObj);
+//console.log(typeof ("type myJSON : " + myJSON))
+    console.log("myJSON aprés stringify"+myJSON);
+
+
+
+
+//Stock data JSON en localStorage en paire clé/valeur
+    //localStorage.setItem("objet",myJSON);
+    localStorage.setItem("objet",myJSON);
+//Lecture
+    myJSON = localStorage.getItem("objet");
+    myObj = JSON.parse(myJSON);
+    console.log(myObj);
+
+
+    let newTr = document.createElement('tr');
+    //newTr vas inclure les éléments suivants en enfants DOM :
+    let newTd1 = document.createElement('td');
+    let h3Td1 = document.createElement('h3');
+    let imgTd1 = document.createElement('img');
+    let  newTd2 = document.createElement('td');
+    let newTd3 = document.createElement('td');
+    let newTd4 = document.createElement('td');
+    let btnZoom = document.createElement('button');
+
+    h3Td1.textContent = valueAddAnimalNom;
+    //imgTd1.textContent = animaux[i].imgsource;
+    imgTd1.setAttribute('src',valueAddAnimalImg);
+    newTd2.textContent = 'Descriptif : '+ valueAddAnimalDescri;
+    newTd3.textContent = "Origine : "+valueAddAnimalOrigin;
+
+    btnZoom.textContent = "Zoom";
+
+    newTr.appendChild(newTd1);
+    newTd1.appendChild(h3Td1);
+    newTd1.appendChild(imgTd1);
+    newTr.appendChild(newTd2);
+    newTr.appendChild(newTd3);
+
+    newTd4.appendChild(btnZoom);
+    newTr.appendChild(newTd4);
+
+    animauxTbody.appendChild(newTr);
+
+
+
+//showAnimaux(myObj);
+
+
+
+//document.getElementById('testParaf').innerHTML = myJSON;
+
+//document.getElementById('testParaf').innerHTML = obj;
+
+//myJSON.send(jsonAnimaux);
+//jsonAnimaux.send(myJSON);
+    console.log(jsonAnimaux);
+
+
+
+    //showAnimaux(jsonAnimaux + myJSON);
 
 
     /*
