@@ -225,6 +225,23 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
+    let myObj = {
+        name:valueAddAnimalNom,
+        imgsource:valueAddAnimalImg,
+        description:valueAddAnimalDescri,
+        origine:valueAddAnimalOrigin
+    };
+    let myJSON = JSON.stringify(myObj);
+    console.log(myJSON);
+
+    //Stock data JSON
+    localStorage.setItem("testJSON", myJSON);
+    //récup data
+    let text = localStorage.getItem("testJSON");
+    let obj = JSON.parse(text);
+
+    showAnimaux(jsonAnimaux);
+
 
     /*
     let myJSON = {"name":valueAddAnimalNom, "imgsource":valueAddAnimalImg,"description":valueAddAnimalDescri,"origine":valueAddAnimalOrigin};
