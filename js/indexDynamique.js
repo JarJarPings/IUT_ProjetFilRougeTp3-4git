@@ -225,6 +225,11 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
+    let animauxJson = jsonAnimaux;
+    //console.log("animauxJson récup value :")
+    //console.log(animauxJson);
+
+
 
     let myObj = {
         "name":valueAddAnimalNom,
@@ -245,12 +250,20 @@ btnAddNewAnimal.onclick = function (){
 
 
 //Stock data JSON en localStorage en paire clé/valeur
-    //localStorage.setItem("objet",myJSON);
     localStorage.setItem("objet",myJSON);
+
 //Lecture
     myJSON = localStorage.getItem("objet");
     myObj = JSON.parse(myJSON);
+    console.log("myObj 2 :");
     console.log(myObj);
+
+    let newJsonAnimaux = myObj;
+    console.log("New Json Animaux : ");
+    console.log(newJsonAnimaux);
+
+    //let jsonAnimaux = animauxJson;
+    //console.log(jsonAnimaux);
 
 
     let newTr = document.createElement('tr');
@@ -263,11 +276,11 @@ btnAddNewAnimal.onclick = function (){
     let newTd4 = document.createElement('td');
     let btnZoom = document.createElement('button');
 
-    h3Td1.textContent = valueAddAnimalNom;
+    h3Td1.textContent = newJsonAnimaux.name;
     //imgTd1.textContent = animaux[i].imgsource;
-    imgTd1.setAttribute('src',valueAddAnimalImg);
-    newTd2.textContent = 'Descriptif : '+ valueAddAnimalDescri;
-    newTd3.textContent = "Origine : "+valueAddAnimalOrigin;
+    imgTd1.setAttribute('src',newJsonAnimaux.imgsource);
+    newTd2.textContent = 'Descriptif : '+ newJsonAnimaux.description;
+    newTd3.textContent = "Origine : "+newJsonAnimaux.origine;
 
     btnZoom.textContent = "Zoom";
 
@@ -283,47 +296,12 @@ btnAddNewAnimal.onclick = function (){
     animauxTbody.appendChild(newTr);
 
 
-
-//showAnimaux(myObj);
-
-
-
 //document.getElementById('testParaf').innerHTML = myJSON;
 
-//document.getElementById('testParaf').innerHTML = obj;
-
-//myJSON.send(jsonAnimaux);
-//jsonAnimaux.send(myJSON);
     console.log(jsonAnimaux);
 
 
 
-    //showAnimaux(jsonAnimaux + myJSON);
-
-
-    /*
-    let myJSON = {"name":valueAddAnimalNom, "imgsource":valueAddAnimalImg,"description":valueAddAnimalDescri,"origine":valueAddAnimalOrigin};
-    myJSON;
-    console.log(myJSON);
-    let myString = JSON.stringify(myJSON);
-    myString;
-    console.log(myString);
-    console.log(jsonAnimaux);
-
-
-    console.log(JSON.stringify({ x: 5, y: 6 }));
-// expected output: "{"x":5,"y":6}"
-
-    console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
-// expected output: "[3,"false",false]"
-
-    console.log(JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] }));
-// expected output: "{"x":[10,null,null,null]}"
-
-    console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
-// expected output: ""2006-01-02T15:04:05.000Z""
-
-     */
 
 };
 
