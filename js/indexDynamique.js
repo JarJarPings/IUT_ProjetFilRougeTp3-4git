@@ -225,8 +225,11 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
-    let animauxJson = jsonAnimaux;
+    const aJson = JSON.parse(jsonAnimaux);
+    //console.log("animauxJson récup données JSON : ");
+    //console.log(aJson);
     //console.log("animauxJson récup value :")
+    //console.log("animauxJson : ");
     //console.log(animauxJson);
 
 
@@ -238,9 +241,43 @@ btnAddNewAnimal.onclick = function (){
         "origine":[valueAddAnimalOrigin]
     };
 
-    console.log(typeof ("type myObj : " + myObj))
-    console.log("myObj JS avant stringify : " + myObj);
+    console.log("créer myObj :")
+    console.log(myObj);
+    //const jnewE = JSON.stringify(myObj);
+    //console.log(jnewE);
+    //const newJSON = JSON.parse(jnewE);
+    //console.log(newJSON);
+    //const newAnimal = JSON.parse(jnewE);
 
+    //animauxJson.push(myObj);
+
+    //console.log(jsonAnimaux);
+
+    /*
+    Méthode a mmathieu :
+    // Update header text
+document.querySelector('#header').innerHTML = message
+const json = '[{"nom": "Forestier","prenom":"Quentin"},{"nom": "Panel","prenom":"mathieu"}]';
+
+const obj = JSON.parse(json);
+
+console.log(obj.count);
+obj.forEach(element => document.getElementById("container").append(element.nom));
+
+const newElement = '{"nom":"Fernandes","prenom":"Alex"}';
+const jnewE = JSON.parse(newElement);
+obj.push(jnewE);
+obj.forEach(element => document.getElementById("container").append(element.nom));
+// Log to console
+console.log(obj);
+
+
+     */
+
+    //console.log(typeof ("type myObj : " + myObj))
+    //console.log("myObj JS avant stringify : " + myObj);
+
+    /*
    let myJSON = JSON.stringify(myObj);
     console.log("myObj aprés stringify"+myObj);
 //console.log(typeof ("type myJSON : " + myJSON))
@@ -299,6 +336,8 @@ btnAddNewAnimal.onclick = function (){
 //document.getElementById('testParaf').innerHTML = myJSON;
 
     console.log(jsonAnimaux);
+
+     */
 
 
 
