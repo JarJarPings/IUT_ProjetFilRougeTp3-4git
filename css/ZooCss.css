@@ -13,28 +13,25 @@ body{
 header{
     background-color: limegreen;
     background-image: url("https://media.tenor.com/fGE8DZgU5D8AAAAd/jungle-leaves.gif");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: center;
-    background-size: 100%;
+    background-size: 150%;
     border: yellow groove 15px;
+
+
 }
 
 /*Select by ID*/
 
 /* Gestion des Titre H1 et H2 en haut de chaques pages */
-#MainTitle{
+.MainTitle{
     color: yellow;
     text-decoration: underline dotted;
     /*margin: auto 88px;*/
     text-align: center;
 }
 
-#MenuTitle{
-    color: yellow;
-    text-decoration: underline dashed;
-    /*margin: auto 88px;*/
-    text-align: center;
-}
+
 
 /* Gestion liste Menu principale*/
 
@@ -42,18 +39,20 @@ header{
     /*padding-left: 50px;
     padding-right: 50px;
     margin: auto 88px;*/
-    text-align: center;
+
+
+
 
 }
 
 #MainMenu {
 
-    border-width: 50px;
+    border-width: 25px;
 }
 
 #MainMenu li {
     background-color: yellow;
-    width: 100px;
+    width: 188px;
     text-align: center;
     border: yellow groove;
 
@@ -99,7 +98,7 @@ header{
 
 #MainTable >tbody tr {
     color: yellow;
-    font-weight: bolder;
+
 
 }
 
@@ -113,6 +112,12 @@ header{
 #MainTable >tbody>tr>td>img{
     width: 250px;
     height: 250px;
+}
+
+.new2Td{
+    overflow: auto;
+    height: 288px;
+
 }
 
 
@@ -148,12 +153,7 @@ header{
 
 
 /*Images du tabeau Animaux du zoo*/
-.ImgZoo {
-    height: 200px;
-    width: 200px;
-    pointer-events: auto;
-    mouse-event: pointermove;
-}
+
 
 /*span Tableau animaux Zoo*/
 

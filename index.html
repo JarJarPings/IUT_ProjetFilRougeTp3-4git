@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>Index Zootopia</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/ZooCss.css">
-  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css">
+
 
 </head>
 
 <header class="container">
 
-  <h1 id="MainTitle" class=""> Index ! </h1>
+  <h1 id="FirstTitle" class="MainTitle"> Index ! </h1>
 
-  <h2 id="MenuTitle"> Menu </h2>
+  <h2 class="MainTitle"> Menu </h2>
 
   <nav id="MainNav" >
 
@@ -49,7 +50,7 @@
 <!-- ADD PAGE ACCEUIL -->
 
 <section id="mainSectionAcceuil">
-  <article class="RubriqueStandard">
+  <article class="RubriqueStandard container">
     <h3> Description Générale </h3>
     <p>
       On a de tous ici, de la bestiolle à poil et à plume !
@@ -148,11 +149,11 @@
 
 <!-- ADD PAGE CONTACT -->
 
-<form id="formPageContact" action="" method="post">
+<form id="formPageContact" action="" method="post" class="container">
 
-  <div>
-    <label for="Nom">Nom :</label>
-    <input type="text" id="Nom" name="user_Nom" required>
+  <div class="row">
+    <label class="col-sm-6 col-md-6 col-lg-6" for="Nom">Nom :</label>
+    <input class="col-sm-6 col-md-6 col-lg-6" type="text" id="Nom" name="user_Nom" required>
   </div>
 
   <div>
@@ -190,9 +191,9 @@
 
 <div id="divTableAnimaux">
 
-  <table id="MainTable">
-    <thead class="container">
-    <tr class="row">
+  <table id="MainTable" class="container">
+    <thead class="row">
+    <tr >
       <th class="col-sm-3 col-md-3 col-lg-3"> NOM </th>
       <th class="col-sm-3 col-md-3 col-lg-3"> Description </th>
       <th class="col-sm-3 col-md-3 col-lg-3"> Pays Natal</th>

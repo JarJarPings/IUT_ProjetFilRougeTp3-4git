@@ -23,7 +23,7 @@ const ancreContact = document.getElementById('ancreContact');
 const ancreAnimaux = document.getElementById('ancreAnimaux');
 
 //Récup ID MainTitle et paraNav
-let mainTitle = document.getElementById('MainTitle');
+let mainTitle = document.getElementById('FirstTitle');
 let paraNav = document.getElementById('paraNav');
 
 //Par différent events onClick on indique quels éléments DOM s'affiche ou non
@@ -148,6 +148,8 @@ console.log(animauxJson);
 //Qu'on récup dans une autre variable jsonAnimaux
 let jsonAnimaux = animauxJson;
 console.log(jsonAnimaux);
+//console.log(jsonAnimaux);
+//const animauxParse = JSON.parse(animauxJson);
 
 function showAnimaux(jsonObj){
 
@@ -156,21 +158,24 @@ function showAnimaux(jsonObj){
     for (let i = 0; i < animaux.length; i++){
         let newTr = document.createElement('tr');
         //newTr vas inclure les éléments suivants en enfants DOM :
-        let newTd1 = document.createElement('td');
-        let h3Td1 = document.createElement('h3');
-        let imgTd1 = document.createElement('img');
-        let  newTd2 = document.createElement('td');
-        let newTd3 = document.createElement('td');
-        let newTd4 = document.createElement('td');
-        let btnZoom = document.createElement('button');
+        const newTd1 = document.createElement('td');
+        const h3Td1 = document.createElement('h3');
+        const imgTd1 = document.createElement('img');
+        const newTd2 = document.createElement('td');
+        const newTd3 = document.createElement('td');
+        const newTd4 = document.createElement('td');
+        const btnDelete = document.createElement('button');
+        const btnModif = document.createElement('button');
 
         h3Td1.textContent = animaux[i].name;
         //imgTd1.textContent = animaux[i].imgsource;
         imgTd1.setAttribute('src',animaux[i].imgsource);
         newTd2.textContent = 'Descriptif : '+ animaux[i].description;
+        newTd2.className = 'new2td';
         newTd3.textContent = "Origine : "+animaux[i].origine;
 
-        btnZoom.textContent = "Zoom";
+        btnDelete.textContent = "supp";
+        btnModif.textContent = "modif";
 
         newTr.appendChild(newTd1);
         newTd1.appendChild(h3Td1);
@@ -178,7 +183,8 @@ function showAnimaux(jsonObj){
         newTr.appendChild(newTd2);
         newTr.appendChild(newTd3);
 
-        newTd4.appendChild(btnZoom);
+        newTd4.appendChild(btnModif);
+        newTd4.appendChild(btnDelete);
         newTr.appendChild(newTd4);
 
         animauxTbody.appendChild(newTr);
@@ -187,10 +193,11 @@ function showAnimaux(jsonObj){
 
 }
 showAnimaux(jsonAnimaux);
+//showAnimaux(animauxParse);
 
 
 
-
+let jnewE;
 //Gestion dynamique du tableau
 //const divTableAnimaux = document.getElementById("divTableAnimaux");
 
@@ -225,14 +232,18 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
-    const aJson = JSON.parse(jsonAnimaux);
+    //const aJson = JSON.parse(jsonAnimaux);
     //console.log("animauxJson récup données JSON : ");
     //console.log(aJson);
     //console.log("animauxJson récup value :")
     //console.log("animauxJson : ");
     //console.log(animauxJson);
 
+    const myStr = JSON.stringify(jsonAnimaux);
+    console.log(" myStr = jsonAnimaux string : ");
+    console.log(myStr);
 
+    //let indexLg= jsonAnimaux.length +1;
 
     let myObj = {
         "name":valueAddAnimalNom,
@@ -241,11 +252,16 @@ btnAddNewAnimal.onclick = function (){
         "origine":[valueAddAnimalOrigin]
     };
 
-    console.log("créer myObj :")
+    console.log("créer myObj :");
     console.log(myObj);
-    //const jnewE = JSON.stringify(myObj);
-    //console.log(jnewE);
+    //jsonAnimaux.push(myObj);
+    jnewE = JSON.stringify(myObj);
+    console.log("jnewE :");
+    console.log(jnewE);
+    //jsonAnimaux.splice(indexLg, 0, myObj);
+    //animauxJson.push(jnewE);
     //const newJSON = JSON.parse(jnewE);
+    //console.log("newJSON :");
     //console.log(newJSON);
     //const newAnimal = JSON.parse(jnewE);
 
@@ -343,6 +359,5 @@ console.log(obj);
 
 
 };
-
 
 
