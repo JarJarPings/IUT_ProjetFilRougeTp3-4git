@@ -239,9 +239,19 @@ btnAddNewAnimal.onclick = function (){
     //console.log("animauxJson : ");
     //console.log(animauxJson);
 
-    const myStr = JSON.stringify(jsonAnimaux);
+    let myStr = JSON.stringify(jsonAnimaux);
     console.log(" myStr = jsonAnimaux string : ");
     console.log(myStr);
+
+
+
+    /*SyntaxError: JSON.parse: unexpected character
+    let myPars = JSON.parse(jsonAnimaux);
+    console.log(" myPars = jsonAnimaux parse : ");
+    console.log(myPars);
+
+     */
+
 
     //let indexLg= jsonAnimaux.length +1;
 
@@ -255,9 +265,14 @@ btnAddNewAnimal.onclick = function (){
     console.log("créer myObj :");
     console.log(myObj);
     //jsonAnimaux.push(myObj);
+
+    //SyntaxError: JSON.parse: unexpected character
+    //jnewE = JSON.parse(myObj);
+
     jnewE = JSON.stringify(myObj);
     console.log("jnewE :");
     console.log(jnewE);
+
     //jsonAnimaux.splice(indexLg, 0, myObj);
     //animauxJson.push(jnewE);
     //const newJSON = JSON.parse(jnewE);
