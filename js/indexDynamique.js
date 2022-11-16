@@ -144,18 +144,16 @@ ancreAnimaux.onclick = function (){
 //récup tbody
 const animauxTbody = document.getElementById("animauxTbody");
 //const animauxJson déclarer dans fichier animaux.JSON
-console.log(animauxJson);
+//console.log(animauxJson);
 //Qu'on récup dans une autre variable jsonAnimaux
-let jsonAnimaux = animauxJson;
-console.log(jsonAnimaux);
-//console.log(jsonAnimaux);
-//const animauxParse = JSON.parse(animauxJson);
 
+const animauxParse = JSON.parse(animauxJson);
+console.log(animauxParse);
 function showAnimaux(jsonObj){
 
-    let animaux = jsonObj['espece'];
+    animauxTbody.innerHTML = "";
 
-    for (let i = 0; i < animaux.length; i++){
+    for (let i = 0; i < jsonObj.length; i++){
         let newTr = document.createElement('tr');
         //newTr vas inclure les éléments suivants en enfants DOM :
         const newTd1 = document.createElement('td');
@@ -167,12 +165,12 @@ function showAnimaux(jsonObj){
         const btnDelete = document.createElement('button');
         const btnModif = document.createElement('button');
 
-        h3Td1.textContent = animaux[i].name;
+        h3Td1.textContent = jsonObj[i].name;
         //imgTd1.textContent = animaux[i].imgsource;
-        imgTd1.setAttribute('src',animaux[i].imgsource);
-        newTd2.textContent = 'Descriptif : '+ animaux[i].description;
+        imgTd1.setAttribute('src',jsonObj[i].imgsource);
+        newTd2.textContent = 'Descriptif : '+ jsonObj[i].description;
         newTd2.className = 'new2td';
-        newTd3.textContent = "Origine : "+animaux[i].origine;
+        newTd3.textContent = "Origine : "+jsonObj[i].origine;
 
         btnDelete.textContent = "supp";
         btnModif.textContent = "modif";
@@ -187,12 +185,13 @@ function showAnimaux(jsonObj){
         newTd4.appendChild(btnDelete);
         newTr.appendChild(newTd4);
 
+
         animauxTbody.appendChild(newTr);
 
     }
 
 }
-showAnimaux(jsonAnimaux);
+showAnimaux(animauxParse);
 //showAnimaux(animauxParse);
 
 
@@ -239,9 +238,7 @@ btnAddNewAnimal.onclick = function (){
     //console.log("animauxJson : ");
     //console.log(animauxJson);
 
-    let myStr = JSON.stringify(jsonAnimaux);
-    console.log(" myStr = jsonAnimaux string : ");
-    console.log(myStr);
+
 
 
 
@@ -264,14 +261,19 @@ btnAddNewAnimal.onclick = function (){
 
     console.log("créer myObj :");
     console.log(myObj);
-    //jsonAnimaux.push(myObj);
+    animauxParse.push(myObj);
+    console.log(animauxParse);
+    showAnimaux(animauxParse);
 
     //SyntaxError: JSON.parse: unexpected character
     //jnewE = JSON.parse(myObj);
 
+    /*
     jnewE = JSON.stringify(myObj);
     console.log("jnewE :");
     console.log(jnewE);
+
+     */
 
     //jsonAnimaux.splice(indexLg, 0, myObj);
     //animauxJson.push(jnewE);
@@ -315,7 +317,7 @@ console.log(obj);
     console.log("myJSON aprés stringify"+myJSON);
 
 
-
+/*
 
 //Stock data JSON en localStorage en paire clé/valeur
     localStorage.setItem("objet",myJSON);
