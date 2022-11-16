@@ -143,12 +143,13 @@ ancreAnimaux.onclick = function (){
 //JSON
 //récup tbody
 const animauxTbody = document.getElementById("animauxTbody");
-//const animauxJson déclarer dans fichier animaux.JSON
-//console.log(animauxJson);
-//Qu'on récup dans une autre variable jsonAnimaux
+
+
+//On récup chaine js qu'on parse
 
 const animauxParse = JSON.parse(animauxJson);
 console.log(animauxParse);
+//Fonction affichage éléments JSON
 function showAnimaux(jsonObj){
 
     animauxTbody.innerHTML = "";
@@ -164,9 +165,9 @@ function showAnimaux(jsonObj){
         const newTd4 = document.createElement('td');
         const btnDelete = document.createElement('button');
         const btnModif = document.createElement('button');
+        const checkB = document.createElement('input');
 
         h3Td1.textContent = jsonObj[i].name;
-        //imgTd1.textContent = animaux[i].imgsource;
         imgTd1.setAttribute('src',jsonObj[i].imgsource);
         newTd2.textContent = 'Descriptif : '+ jsonObj[i].description;
         newTd2.className = 'new2td';
@@ -174,6 +175,8 @@ function showAnimaux(jsonObj){
 
         btnDelete.textContent = "supp";
         btnModif.textContent = "modif";
+        checkB.setAttribute('type','checkbox');
+        checkB.className = "checkAnimal";
 
         newTr.appendChild(newTd1);
         newTd1.appendChild(h3Td1);
@@ -181,30 +184,48 @@ function showAnimaux(jsonObj){
         newTr.appendChild(newTd2);
         newTr.appendChild(newTd3);
 
-        newTd4.appendChild(btnModif);
-        newTd4.appendChild(btnDelete);
+        //newTd4.appendChild(btnModif);
+        //newTd4.appendChild(btnDelete);
+        newTd4.appendChild(checkB);
         newTr.appendChild(newTd4);
 
 
         animauxTbody.appendChild(newTr);
 
-    }
+    };
+/*
+    listName =[];
+    for (let i=0; i<jsonObj.length; i++){
+        console.log(jsonObj[i].name)
 
-}
+        listName.push(jsonObj[i].name)
+    };
+    console.log(listName)
+    strListName = JSON.stringify(listName);
+    console.log(strListName);
+
+    idList = [];
+    for (let i=0; i<jsonObj.length; i++){
+        console.log(jsonObj[i])
+        idList.push(jsonObj[i])
+    };
+    console.log("idList : ");
+    console.log(idList);
+
+ */
+
+};
 showAnimaux(animauxParse);
-//showAnimaux(animauxParse);
+//console.log(animauxParse.indexOf(jsonObj[i]));
 
 
 
-let jnewE;
+
 //Gestion dynamique du tableau
-//const divTableAnimaux = document.getElementById("divTableAnimaux");
 
 //Récup des élément byID
-
 //récup <table>
 const mainTable = document.getElementById("MainTable");
-
 //Récup form
 const formAddAnimal = document.getElementById("formAddAnimal");
 //Récup VALUE des input
@@ -220,7 +241,6 @@ const addFrag = document.createDocumentFragment();
 
 
 //Event onClick sur boutton addNewAnimal
-
 btnAddNewAnimal.onclick = function (){
     valueAddAnimalNom = document.getElementById("inputNomFormAddAnimal").value;
     console.log("nom: "+valueAddAnimalNom);
@@ -231,27 +251,7 @@ btnAddNewAnimal.onclick = function (){
     valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
     console.log("url img :" +valueAddAnimalImg);
 
-    //const aJson = JSON.parse(jsonAnimaux);
-    //console.log("animauxJson récup données JSON : ");
-    //console.log(aJson);
-    //console.log("animauxJson récup value :")
-    //console.log("animauxJson : ");
-    //console.log(animauxJson);
-
-
-
-
-
-    /*SyntaxError: JSON.parse: unexpected character
-    let myPars = JSON.parse(jsonAnimaux);
-    console.log(" myPars = jsonAnimaux parse : ");
-    console.log(myPars);
-
-     */
-
-
-    //let indexLg= jsonAnimaux.length +1;
-
+//On récup toutes les value du form pour en faire un nouvel objet
     let myObj = {
         "name":valueAddAnimalNom,
         "imgsource":valueAddAnimalImg,
@@ -261,120 +261,54 @@ btnAddNewAnimal.onclick = function (){
 
     console.log("créer myObj :");
     console.log(myObj);
+    //Add le nouvel élément à notre liste animauxParse
     animauxParse.push(myObj);
     console.log(animauxParse);
     showAnimaux(animauxParse);
 
-    //SyntaxError: JSON.parse: unexpected character
-    //jnewE = JSON.parse(myObj);
-
-    /*
-    jnewE = JSON.stringify(myObj);
-    console.log("jnewE :");
-    console.log(jnewE);
-
-     */
-
-    //jsonAnimaux.splice(indexLg, 0, myObj);
-    //animauxJson.push(jnewE);
-    //const newJSON = JSON.parse(jnewE);
-    //console.log("newJSON :");
-    //console.log(newJSON);
-    //const newAnimal = JSON.parse(jnewE);
-
-    //animauxJson.push(myObj);
-
-    //console.log(jsonAnimaux);
-
-    /*
-    Méthode a mmathieu :
-    // Update header text
-document.querySelector('#header').innerHTML = message
-const json = '[{"nom": "Forestier","prenom":"Quentin"},{"nom": "Panel","prenom":"mathieu"}]';
-
-const obj = JSON.parse(json);
-
-console.log(obj.count);
-obj.forEach(element => document.getElementById("container").append(element.nom));
-
-const newElement = '{"nom":"Fernandes","prenom":"Alex"}';
-const jnewE = JSON.parse(newElement);
-obj.push(jnewE);
-obj.forEach(element => document.getElementById("container").append(element.nom));
-// Log to console
-console.log(obj);
-
-
-     */
-
-    //console.log(typeof ("type myObj : " + myObj))
-    //console.log("myObj JS avant stringify : " + myObj);
-
-    /*
-   let myJSON = JSON.stringify(myObj);
-    console.log("myObj aprés stringify"+myObj);
-//console.log(typeof ("type myJSON : " + myJSON))
-    console.log("myJSON aprés stringify"+myJSON);
-
-
-/*
-
-//Stock data JSON en localStorage en paire clé/valeur
-    localStorage.setItem("objet",myJSON);
-
-//Lecture
-    myJSON = localStorage.getItem("objet");
-    myObj = JSON.parse(myJSON);
-    console.log("myObj 2 :");
-    console.log(myObj);
-
-    let newJsonAnimaux = myObj;
-    console.log("New Json Animaux : ");
-    console.log(newJsonAnimaux);
-
-    //let jsonAnimaux = animauxJson;
-    //console.log(jsonAnimaux);
-
-
-    let newTr = document.createElement('tr');
-    //newTr vas inclure les éléments suivants en enfants DOM :
-    let newTd1 = document.createElement('td');
-    let h3Td1 = document.createElement('h3');
-    let imgTd1 = document.createElement('img');
-    let  newTd2 = document.createElement('td');
-    let newTd3 = document.createElement('td');
-    let newTd4 = document.createElement('td');
-    let btnZoom = document.createElement('button');
-
-    h3Td1.textContent = newJsonAnimaux.name;
-    //imgTd1.textContent = animaux[i].imgsource;
-    imgTd1.setAttribute('src',newJsonAnimaux.imgsource);
-    newTd2.textContent = 'Descriptif : '+ newJsonAnimaux.description;
-    newTd3.textContent = "Origine : "+newJsonAnimaux.origine;
-
-    btnZoom.textContent = "Zoom";
-
-    newTr.appendChild(newTd1);
-    newTd1.appendChild(h3Td1);
-    newTd1.appendChild(imgTd1);
-    newTr.appendChild(newTd2);
-    newTr.appendChild(newTd3);
-
-    newTd4.appendChild(btnZoom);
-    newTr.appendChild(newTd4);
-
-    animauxTbody.appendChild(newTr);
-
-
-//document.getElementById('testParaf').innerHTML = myJSON;
-
-    console.log(jsonAnimaux);
-
-     */
-
-
-
+    //console.log(animauxParse[3]);
 
 };
 
 
+
+const btnSupp = document.getElementById('btnSupp');
+let checkSelect = document.getElementsByClassName('checkAnimal');
+console.log(checkSelect);
+
+
+function suppAnimal(){
+
+    for (i=0; i<checkSelect.length; i++){
+        let test = checkSelect[i].getAttribute('checked');
+        console.log(test);
+    }
+
+}
+//checked
+// :
+// false
+btnSupp.onclick = function (){
+
+    for (let i=0; i<checkSelect.length; i++){
+        //checkSelect[i].getAttribute('checked');
+        console.log(checkSelect[i].getAttribute('checked'));
+    }
+   //suppAnimal();
+
+}
+
+
+//console.log(animauxParse.indexOf('1'));
+
+/*
+function addNameList(jsObj){
+
+    let nameList = [];
+
+    for (let i = 0; i < jsObj.length; i++) {
+        let nameList = jsObj[i].name;
+        console.log(nameList);
+    }
+}
+ */
