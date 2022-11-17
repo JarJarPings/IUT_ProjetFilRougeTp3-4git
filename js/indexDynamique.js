@@ -174,9 +174,13 @@ function showAnimaux(jsonObj){
         newTd3.textContent = "Origine : "+jsonObj[i].origine;
 
         btnDelete.textContent = "supp";
+        btnDelete.setAttribute('id','btnSupp'+[i]);
+
         btnModif.textContent = "modif";
-        checkB.setAttribute('type','checkbox');
-        checkB.className = "checkAnimal";
+        btnModif.setAttribute('id','btnModif'+[i]);
+        //checkB.setAttribute('type','checkbox');
+        //checkB.className = "checkAnimal";
+        newTr.setAttribute('id','newTr'+[i]);
 
         newTr.appendChild(newTd1);
         newTd1.appendChild(h3Td1);
@@ -184,41 +188,69 @@ function showAnimaux(jsonObj){
         newTr.appendChild(newTd2);
         newTr.appendChild(newTd3);
 
-        //newTd4.appendChild(btnModif);
-        //newTd4.appendChild(btnDelete);
-        newTd4.appendChild(checkB);
+        newTd4.appendChild(btnModif);
+        newTd4.appendChild(btnDelete);
+        //newTd4.appendChild(checkB);
         newTr.appendChild(newTd4);
 
 
         animauxTbody.appendChild(newTr);
 
     };
-/*
-    listName =[];
-    for (let i=0; i<jsonObj.length; i++){
-        console.log(jsonObj[i].name)
-
-        listName.push(jsonObj[i].name)
-    };
-    console.log(listName)
-    strListName = JSON.stringify(listName);
-    console.log(strListName);
-
-    idList = [];
-    for (let i=0; i<jsonObj.length; i++){
-        console.log(jsonObj[i])
-        idList.push(jsonObj[i])
-    };
-    console.log("idList : ");
-    console.log(idList);
-
- */
-
 };
-showAnimaux(animauxParse);
+//showAnimaux(animauxParse);
 //console.log(animauxParse.indexOf(jsonObj[i]));
 
 
+function widgetTab(jsonObj){
+    animauxTbody.innerHTML = "";
+
+    for (let i = 0; i < jsonObj.length; i++){
+        const newDiv = document.createElement('div');
+        const h3Div = document.createElement('h3');
+        const imgDiv = document.createElement('img');
+        const paraDiv = document.createElement('p');
+        const para2Div = document.createElement('p');
+        const hrDiv = document.createElement('hr')
+        const divBtn = document.createElement('div');
+        const btnDelete = document.createElement('button');
+        const btnModif = document.createElement('button');
+
+        newDiv.className = "jumbotron";
+        h3Div.className = "display-4";
+        paraDiv.className = "lead";
+        hrDiv.className = "my-4";
+        divBtn.className = "lead";
+        btnDelete.className = "btn btn-primary btn-lg";
+        btnModif.className = "btn btn-primary btn-lg";
+        //imgDiv.
+
+        h3Div.textContent = jsonObj[i].name;
+        //imgTd1.setAttribute('src',jsonObj[i].imgsource);
+        paraDiv.textContent = 'Descriptif : '+ jsonObj[i].description;
+
+        para2Div.textContent = "Origine : "+jsonObj[i].origine;
+
+        btnDelete.textContent = "supp";
+        btnDelete.setAttribute('id','btnSupp'+[i]);
+
+        btnModif.textContent = "modif";
+        btnModif.setAttribute('id','btnModif'+[i]);
+
+        newDiv.appendChild(hrDiv);
+        newDiv.appendChild(paraDiv);
+        newDiv.appendChild(para2Div);
+        newDiv.appendChild(hrDiv);
+        divBtn.appendChild(btnModif);
+        divBtn.appendChild(btnDelete)
+        newDiv.appendChild(divBtn);
+
+        animauxTbody.appendChild(newDiv);
+
+    };
+};
+widgetTab(animauxParse);
+//ça peux pas marcher a cause des régles css du tbody
 
 
 //Gestion dynamique du tableau

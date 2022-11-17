@@ -10,40 +10,40 @@
 
 </head>
 
-<header class="container">
+<header>
 
-  <h1 id="FirstTitle" class="MainTitle"> Index ! </h1>
+    <h1 id="FirstTitle" class="MainTitle"> Index ! </h1>
 
-  <h2 class="MainTitle"> Menu </h2>
+    <h2 class="MainTitle"> Menu </h2>
 
-  <nav id="MainNav" >
+    <nav id="MainNav" class="container">
 
-    <ul id="MainMenu" class="row">
-      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreAcceuill" href="#"> Acceuil </a></li>
+      <ul id="MainMenu">
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> <a id="ancreAcceuill" href="#"> Acceuil </a></li>
 
-      <li class="deroulant col-sm-2 col-md-2 col-lg-2"><a href="#"> Menu perso </a>
-        <ul class="sous">
-          <li> <a href="#"> Connexion </a> </li>
-          <li> <a id="ancrePerso"> Mes infos </a>  </li>
-          <li> <a href="#"> Mesagerie </a>  </li>
-          <li> <a href="#"> Historique </a>  </li>
-        </ul>
-      </li>
+        <li class="deroulant col-xs-2  col-sm-2 col-md-2 col-lg-2"><a href="#"> Menu perso </a>
+          <ul class="sous">
+            <li> <a href="#"> Connexion </a> </li>
+            <li> <a id="ancrePerso"> Mes infos </a>  </li>
+            <li> <a href="#"> Mesagerie </a>  </li>
+            <li> <a href="#"> Historique </a>  </li>
+          </ul>
+        </li>
 
-      <li class="col-sm-2 col-md-2 col-lg-2">  <a id="ancreAnimaux" href="#">Animaux</a> </li>
-      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreAudio" href="#"> Visite Audio</a> </li>
-      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreVideo" href="#"> Visite Vidéo </a> </li>
-      <li class="col-sm-2 col-md-2 col-lg-2"> <a id="ancreContact" href="#"> Contact </a> </li>
-    </ul>
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2">  <a id="ancreAnimaux" href="#">Animaux</a> </li>
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> <a id="ancreAudio" href="#"> Visite Audio</a> </li>
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> <a id="ancreVideo" href="#"> Visite Vidéo </a> </li>
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> <a id="ancreContact" href="#"> Contact </a> </li>
+      </ul>
 
-  </nav>
+    </nav>
 
 </header>
 
 
-<body>
+<body class="container">
 
-<p id="paraNav">
+<p id="paraNav" class="">
   Pour naviguer, cliquer sur l'onglet de votre choix.
 </p>
 
@@ -152,8 +152,8 @@
 <form id="formPageContact" action="" method="post" class="container">
 
   <div class="row">
-    <label class="col-sm-6 col-md-6 col-lg-6" for="Nom">Nom :</label>
-    <input class="col-sm-6 col-md-6 col-lg-6" type="text" id="Nom" name="user_Nom" required>
+    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6" for="Nom">Nom :</label>
+    <input class="col-xs-6 col-sm-6 col-md-6 col-lg-6" type="text" id="Nom" name="user_Nom" required>
   </div>
 
   <div>
@@ -194,10 +194,10 @@
   <table id="MainTable" class="container">
     <thead class="row">
     <tr >
-      <th class="col-sm-3 col-md-3 col-lg-3"> NOM </th>
-      <th class="col-sm-3 col-md-3 col-lg-3"> Description </th>
-      <th class="col-sm-3 col-md-3 col-lg-3"> Pays Natal</th>
-      <th class="col-sm-3 col-md-3 col-lg-3"> </th>
+      <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> NOM </th>
+      <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> Description </th>
+      <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> Pays Natal</th>
+      <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> </th>
     </tr>
     </thead>
 
@@ -209,9 +209,9 @@
 
   </table>
 
-  <div>
+  <div class="row">
 
-    <button>
+    <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
       <a href="#top">Retour haut de page</a>
     </button>
 
@@ -230,24 +230,24 @@
 
     <fieldset id="fieldAdd" class="row">
 
-      <label class="col-sm-1 col-md-1 col-lg-1" for="inputNomFormAddAnimal">Nom espéce animal :</label>
-      <input class="col-sm-11 col-md-11 col-lg-11" id="inputNomFormAddAnimal" type="text" placeholder="nom espéce">
+      <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1" for="inputNomFormAddAnimal">Nom espéce animal :</label>
+      <input class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="inputNomFormAddAnimal" type="text" placeholder="nom espéce">
 
     </fieldset>
 
     <fieldset class="row">
-      <label class="col-sm-1 col-md-1 col-lg-1" for="inputDescripFormAddAnimal">Description animal :</label>
-      <textarea class="col-sm-11 col-md-11 col-lg-11" id="inputDescripFormAddAnimal" type="text" placeholder="Description"></textarea>
+      <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1" for="inputDescripFormAddAnimal">Description animal :</label>
+      <textarea class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="inputDescripFormAddAnimal" type="text" placeholder="Description"></textarea>
     </fieldset>
 
     <fieldset class="row">
-      <label class="col-sm-1 col-md-1 col-lg-1" for="inputOriginFormAddAnimal">Pays origine animal :</label>
-      <input class="col-sm-11 col-md-11 col-lg-11" id="inputOriginFormAddAnimal" type="text" placeholder="pays origine">
+      <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1" for="inputOriginFormAddAnimal">Pays origine animal :</label>
+      <input class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="inputOriginFormAddAnimal" type="text" placeholder="pays origine">
     </fieldset>
 
     <fieldset class="row">
-      <label class="col-sm-1 col-md-1 col-lg-1" for="inputImageFormAddAnimal">Image animal :</label>
-      <input class="col-sm-11 col-md-11 col-lg-11" id="inputImageFormAddAnimal" type="file" accept="image/png, image/jpg, image/jpeg">
+      <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1" for="inputImageFormAddAnimal">Image animal :</label>
+      <input type="url" class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="inputImageFormAddAnimal" placeholder="hhtps://exemple.com" pattern="https://.*" size="50">
     </fieldset>
 
     <button type="button" id="btnAddNewAnimal">
