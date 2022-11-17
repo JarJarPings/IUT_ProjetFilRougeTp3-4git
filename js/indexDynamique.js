@@ -141,15 +141,16 @@ ancreAnimaux.onclick = function (){
 
 
 //JSON
-//récup tbody
-const animauxTbody = document.getElementById("animauxTbody");
-
+//récup tbody => devenu divWidget suite modif responsive
+const animauxTbody = document.getElementById("divWidget");
+//const animauxTbody = document.getElementById("animauxTbody");
 
 //On récup chaine js qu'on parse
 
 const animauxParse = JSON.parse(animauxJson);
 console.log(animauxParse);
-//Fonction affichage éléments JSON
+//Fonction affichage éléments JSON AVEC TABLEAU
+/*
 function showAnimaux(jsonObj){
 
     animauxTbody.innerHTML = "";
@@ -201,7 +202,9 @@ function showAnimaux(jsonObj){
 //showAnimaux(animauxParse);
 //console.log(animauxParse.indexOf(jsonObj[i]));
 
+ */
 
+//FONCTION AFFICHAGE AVEC WIDGETS
 function widgetTab(jsonObj){
     animauxTbody.innerHTML = "";
 
@@ -225,8 +228,10 @@ function widgetTab(jsonObj){
         btnModif.className = "btn btn-primary btn-lg";
         //imgDiv.
 
-        h3Div.textContent = jsonObj[i].name;
-        //imgTd1.setAttribute('src',jsonObj[i].imgsource);
+        newDiv.setAttribute('id','wid'+[i]);
+
+        h3Div.textContent = "Nom : "+jsonObj[i].name;
+        imgDiv.setAttribute('src',jsonObj[i].imgsource);
         paraDiv.textContent = 'Descriptif : '+ jsonObj[i].description;
 
         para2Div.textContent = "Origine : "+jsonObj[i].origine;
@@ -237,7 +242,8 @@ function widgetTab(jsonObj){
         btnModif.textContent = "modif";
         btnModif.setAttribute('id','btnModif'+[i]);
 
-        newDiv.appendChild(hrDiv);
+        newDiv.appendChild(h3Div);
+        newDiv.appendChild(imgDiv);
         newDiv.appendChild(paraDiv);
         newDiv.appendChild(para2Div);
         newDiv.appendChild(hrDiv);
@@ -261,10 +267,12 @@ const mainTable = document.getElementById("MainTable");
 //Récup form
 const formAddAnimal = document.getElementById("formAddAnimal");
 //Récup VALUE des input
-let valueAddAnimalNom = document.getElementById("inputNomFormAddAnimal").value;
+/*let valueAddAnimalNom = document.getElementById("inputNomFormAddAnimal").value;
 let valueAddAnimalDescri = document.getElementById('inputDescripFormAddAnimal').value;
 let valueAddAnimalOrigin = document.getElementById('inputOriginFormAddAnimal').value;
 let valueAddAnimalImg = document.getElementById('inputImageFormAddAnimal').value;
+
+ */
 //Récup boutton AddAnimal
 const btnAddNewAnimal = document.getElementById('btnAddNewAnimal');
 
@@ -296,7 +304,7 @@ btnAddNewAnimal.onclick = function (){
     //Add le nouvel élément à notre liste animauxParse
     animauxParse.push(myObj);
     console.log(animauxParse);
-    showAnimaux(animauxParse);
+    widgetTab(animauxParse);
 
     //console.log(animauxParse[3]);
 

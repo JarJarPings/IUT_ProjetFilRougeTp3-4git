@@ -17,6 +17,7 @@ header{
     background-position: center;
     background-size: 150%;
     border: yellow groove 15px;
+    padding-left: 0.5%;
 
 
 }
@@ -86,6 +87,7 @@ header{
     border-top: none;
 }
 
+
 #MainTable thead{
     color: limegreen;
     background-color: yellow;
@@ -109,6 +111,8 @@ header{
 
 }
 
+
+
 #MainTable >tbody>tr>td>img{
     width: 250px;
     height: 250px;
@@ -118,6 +122,15 @@ header{
     overflow: auto;
     height: 288px;
 
+}
+
+/*Nouvelle régle css qui vien remplacer celles concernant table:th:tr:td suite td responsive*/
+.jumbotron:hover{
+    color: orange;
+}
+.jumbotron >img{
+    width: 250px;
+    height: 250px;
 }
 
 
