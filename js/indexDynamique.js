@@ -210,6 +210,7 @@ function widgetTab(jsonObj){
 
     for (let i = 0; i < jsonObj.length; i++){
         const newDiv = document.createElement('div');
+        const divCont = document.createElement('div');
         const h3Div = document.createElement('h3');
         const imgDiv = document.createElement('img');
         const paraDiv = document.createElement('p');
@@ -219,16 +220,19 @@ function widgetTab(jsonObj){
         const btnDelete = document.createElement('button');
         const btnModif = document.createElement('button');
 
-        newDiv.className = "jumbotron";
+        newDiv.className = "jumbotron jumbotron-fluide";
+        divCont.className = "container";
         h3Div.className = "display-4";
         paraDiv.className = "lead";
         hrDiv.className = "my-4";
         divBtn.className = "lead";
         btnDelete.className = "btn btn-primary btn-lg";
         btnModif.className = "btn btn-primary btn-lg";
-        //imgDiv.
+        imgDiv.className = "lead"
 
         newDiv.setAttribute('id','wid'+[i]);
+
+        //divCont.style.backgroundImage = jsonObj[i].imgsource;
 
         h3Div.textContent = "Nom : "+jsonObj[i].name;
         imgDiv.setAttribute('src',jsonObj[i].imgsource);
@@ -242,14 +246,16 @@ function widgetTab(jsonObj){
         btnModif.textContent = "modif";
         btnModif.setAttribute('id','btnModif'+[i]);
 
-        newDiv.appendChild(h3Div);
-        newDiv.appendChild(imgDiv);
-        newDiv.appendChild(paraDiv);
-        newDiv.appendChild(para2Div);
-        newDiv.appendChild(hrDiv);
-        divBtn.appendChild(btnModif);
-        divBtn.appendChild(btnDelete)
-        newDiv.appendChild(divBtn);
+        newDiv.appendChild(divCont);
+
+        divCont.appendChild(h3Div);
+        divCont.appendChild(imgDiv);
+        divCont.appendChild(paraDiv);
+        divCont.appendChild(para2Div);
+        divCont.appendChild(hrDiv);
+        divCont.appendChild(btnModif);
+        divCont.appendChild(btnDelete)
+        divCont.appendChild(divBtn);
 
         animauxTbody.appendChild(newDiv);
 
@@ -312,43 +318,5 @@ btnAddNewAnimal.onclick = function (){
 
 
 
-const btnSupp = document.getElementById('btnSupp');
-let checkSelect = document.getElementsByClassName('checkAnimal');
-console.log(checkSelect);
-
-
-function suppAnimal(){
-
-    for (i=0; i<checkSelect.length; i++){
-        let test = checkSelect[i].getAttribute('checked');
-        console.log(test);
-    }
-
-}
-//checked
-// :
-// false
-btnSupp.onclick = function (){
-
-    for (let i=0; i<checkSelect.length; i++){
-        //checkSelect[i].getAttribute('checked');
-        console.log(checkSelect[i].getAttribute('checked'));
-    }
-   //suppAnimal();
-
-}
-
 
 //console.log(animauxParse.indexOf('1'));
-
-/*
-function addNameList(jsObj){
-
-    let nameList = [];
-
-    for (let i = 0; i < jsObj.length; i++) {
-        let nameList = jsObj[i].name;
-        console.log(nameList);
-    }
-}
- */

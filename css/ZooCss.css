@@ -17,7 +17,7 @@ header{
     background-position: center;
     background-size: 150%;
     border: yellow groove 15px;
-    padding-left: 0.5%;
+
 
 
 }
@@ -40,7 +40,6 @@ header{
     /*padding-left: 50px;
     padding-right: 50px;
     margin: auto 88px;*/
-
 
 
 
@@ -125,12 +124,18 @@ header{
 }
 
 /*Nouvelle régle css qui vien remplacer celles concernant table:th:tr:td suite td responsive*/
+.jumbotron{
+    margin-top: 88px;
+    border: groove yellow 8px;
+}
 .jumbotron:hover{
     color: orange;
 }
-.jumbotron >img{
+.jumbotron >div>img{
     width: 250px;
     height: 250px;
+    margin-right: auto;
+
 }
 
 
@@ -228,13 +233,18 @@ nav > ul li:hover .sous{
 
 
 /*
-Gestion style formulaire ajout animaux dans tableaux
+Gestion vidéos
+ */
+.diVid{
+    margin-top: 88px;
+}
+
+/*
+Gestion style formulaire contact
  */
 
-#formAddAnimal{
+#formPageContact >fieldset{
+    margin-top: 18px;
 
 }
 
-#fieldAdd{
-
-}
