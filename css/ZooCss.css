@@ -138,6 +138,24 @@ header{
 
 }
 
+/*Boutton retour haut page */
+#btnBackTop{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*Formulaire ajout widget formAddAnimal*/
+
+#formAddAnimal >fieldset{
+    margin-top: 48px;
+}
+#formAddAnimal >fieldset>input{
+    font-size: 1em;
+    height: 28px;
+
+}
+#btnAddNewAnimal{
+    margin-top: 18px;
+}
 
 /*Gestion section page acceuil*/
 
@@ -247,4 +265,23 @@ Gestion style formulaire contact
     margin-top: 18px;
 
 }
+#formPageContact >fieldset>input{
+    height: 28px;
+}
 
+/*PopCo modal*/
+
+.modal{
+    max-width: 1000px ;
+    /*padding: 0 10px;*/
+    padding-top: 30px;
+}
+
+.modal a.close-modal{
+    top: 5px;
+    right: 5px;
+}
+
+#PopCo{
+    background-color: limegreen;
+}
