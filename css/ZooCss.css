@@ -46,13 +46,13 @@ header{
 }
 
 #MainMenu {
-
+    padding-left: 0px;
     border-width: 10px;
 }
 
 #MainMenu li {
     background-color: yellow;
-    width: 188px;
+
     text-align: center;
     border: yellow groove;
 
@@ -61,6 +61,7 @@ header{
 #MainMenu li a{
     color: limegreen;
     text-decoration: none;
+    font-size: 1.5em;
 }
 
 #MainMenu > li {
@@ -135,7 +136,17 @@ header{
     width: 250px;
     height: 250px;
     margin-right: auto;
+}
 
+.jumbotron>div>p{
+    font-size: 2em;
+}
+.jumbotron>div>button{
+    font-size: 2em;
+}
+
+.lead{
+    font-size: 2.5em;
 }
 
 /*Boutton retour haut page */
@@ -149,9 +160,14 @@ header{
     margin-top: 48px;
 }
 #formAddAnimal >fieldset>input{
-    font-size: 1em;
-    height: 28px;
-
+    font-size: 2em;
+    height: 48px;
+}
+#formAddAnimal >fieldset>label{
+    font-size: 1.5em;
+}
+#formAddAnimal >div>button{
+    font-size: 2em;
 }
 #btnAddNewAnimal{
     margin-top: 18px;
@@ -204,7 +220,7 @@ span.SpanDescAnimal{
 .sous{
     display: none;
     position: absolute;
-    width: 100%;
+
     z-index: 1000;
 }
 
@@ -266,8 +282,20 @@ Gestion style formulaire contact
 
 }
 #formPageContact >fieldset>input{
-    height: 28px;
+    height: 38px;
+    font-size: 1.5em;
 }
+#formPageContact >fieldset>label{
+    font-size: 1.5em;
+}
+#formPageContact >fieldset>span{
+    font-size: 1em;
+}
+#formPageContact >div>button{
+    margin-top: 8px;
+    font-size: 1.5em;
+}
+
 
 /*PopCo modal*/
 
@@ -284,4 +312,8 @@ Gestion style formulaire contact
 
 #PopCo{
     background-color: limegreen;
+}
+
+#btnBackTop{
+    font-size: 2em;
 }
