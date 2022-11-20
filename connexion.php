@@ -5,12 +5,13 @@
     <title>connexion</title>
 </head>
 <body>
-
+<h1>connexion</h1>
 <?php
 $login = $_POST['login'];
-$mdp = $_POST['password'];
+$password = $_POST['password'];
 
-var_dump($mdp . $login);
+
+var_dump($password ." ". $login);
 
     $login_normal = "user";
 	$login_admin = "admin";
@@ -33,7 +34,7 @@ else if ($_POST['login'] == $login_admin && $_POST['password'] == $password){
         }
     }
 ?>
-
+<!--<script src="js/ajax.js"></script>-->
 
 </body>
 </html>
