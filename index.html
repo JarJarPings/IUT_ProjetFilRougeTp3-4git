@@ -14,7 +14,7 @@
 
 <header class="container">
 
-    <h1 id="FirstTitle" class="MainTitle"> Index ! </h1>
+    <h1 id="FirstTitle" class="MainTitle"> Index !!! </h1>
 
     <h2 class="MainTitle"> Menu </h2>
 
@@ -184,8 +184,8 @@
   <fieldset class="row">
     <label class="col-xs-2 col-sm-2 col-md-2 col-lg-2" for="NumTel">Numéro tél :</label>
     <input class="col-xs-4 col-sm-4 col-md-4 col-lg-4" type="tel" id="NumTel" name="user_NumTel"
-           pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" size="20" required>
-    <span class="col-xs-3 col-sm-3 col-md-3 col-lg-3">format requis : 07.94.12.39.45 </span>
+           pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" size="20" placeholder="07-94-12-39-45" required>
+    <span class="col-xs-3 col-sm-3 col-md-3 col-lg-3">format requis : 07-94-12-39-45 </span>
   </fieldset>
 
   <fieldset class="row">
@@ -278,11 +278,13 @@
 
 
 <div id="PopCo" class="modal" style="width: 250px; height: 200px">
-  <label for="login">Identifiant : </label>
-  <input type="text" id="login" placeholder="votre login">
-  <label for="mdp">Mot de passe :</label>
-  <input type="text" id="mdp" placeholder="votre mot de passe">
-  <button type="submit">Connexion</button>
+  <form method="post" action="js/ajax.js">
+    <label for="login">Identifiant : </label>
+    <input type="text" id="login" name="login" placeholder="votre login">
+    <label for="password">Mot de passe :</label>
+    <input type="text" id="password" name="password" placeholder="votre mot de passe">
+    <button type="submit">Connexion</button>
+  </form>
 </div>
 
 
@@ -290,6 +292,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
+
+<script src="js/ajax.js"></script>
 
 <script src="js/animaux.js"></script>
 <script src="js/indexDynamique.js"></script>
